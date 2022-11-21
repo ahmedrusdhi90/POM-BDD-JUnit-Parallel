@@ -1,5 +1,7 @@
 package appHooks;
 
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Properties;
 
 import org.openqa.selenium.OutputType;
@@ -9,11 +11,12 @@ import org.openqa.selenium.WebDriver;
 import com.qa.factory.DriverFactory;
 import com.qa.util.ConfigReader;
 
+import base.Base;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
-public class ApplicationHooks {
+public class ApplicationHooks extends Base{
 	
 	private DriverFactory driverFactory;
 	private WebDriver driver;
@@ -27,10 +30,13 @@ public class ApplicationHooks {
 	}
 	
 	@Before(order = 1)
-	public void lounchBrowser() {
+	public void lounchBrowser() throws Exception {
 		String browserName = prop.getProperty("browser");
 		driverFactory = new DriverFactory();
 		driver = driverFactory.init_driver(browserName);
+		
+		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbmicrotech", "root", "root");
+		st = con.createStatement();
 	}
 	
 	@After(order = 0)
