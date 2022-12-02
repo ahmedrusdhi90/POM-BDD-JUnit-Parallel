@@ -35,8 +35,12 @@ public class HRMLoginSteps {
 
 	@Then("User should be able to login sucessfully and new page open")
 	public void verifyLogin() {
+		
+		
 		loginPage.clickPIM();
+		
 		String homePageHeading = loginPage.verifyHeading();	
+		
 		Assert.assertEquals(homePageHeading, "Employee Information");
 	}
 
@@ -44,6 +48,7 @@ public class HRMLoginSteps {
 	public void verifyErrorMessage(String expectedErrorMessage) {
 
 		String actualErrorMessage = loginPage.actualErrorMsg(); 
+		
 		// Verify Error Message
 		Assert.assertEquals(actualErrorMessage, expectedErrorMessage);
 	}
