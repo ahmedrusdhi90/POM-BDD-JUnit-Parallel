@@ -1,7 +1,10 @@
 package com.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.qa.factory.DriverFactory;
 
@@ -19,6 +22,7 @@ public class VerifyPurchaseOrder {
 	private By year = By.id("year");
 	private By purchase = By.xpath("(//button[@class='btn btn-primary'])[3]");
 	private By idDisplay = By.xpath("/html/body/div[10]/p");
+	private By idDisplay1 = By.xpath("//div[10]/p[contains(text()[2],'Amount')]");
 	
 	public VerifyPurchaseOrder(WebDriver driver) {
 		this.driver = driver;
@@ -56,9 +60,12 @@ public class VerifyPurchaseOrder {
 	public void clickPurchase() {
 		driver.findElement(purchase).click();
 	}
-	public String verifyHeading() {
-		return driver.findElement(idDisplay).getText();
+	public WebElement verifyText() {
+		return driver.findElement(idDisplay);
 	}
 	
+	public String display1() {
+		return driver.findElement(idDisplay1).getText();
+	}
 	
 }

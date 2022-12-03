@@ -14,5 +14,5 @@ And user enters country "USA" and city "TX"
 And user enters credit card "023198765432"
 And user enters month "11" and year "2022"
 And user clicks on purchase button
-Then user gets the title of the purchase page
+Then user gets text of the purchase page
 

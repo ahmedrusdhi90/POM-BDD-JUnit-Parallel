@@ -1,6 +1,9 @@
 package stepdefinitions;
 
+import java.util.List;
+
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 
 import com.pages.VerifyPurchaseOrder;
 import com.qa.factory.DriverFactory;
@@ -10,9 +13,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-
-public class VerifyPurchaseOrderSteps {
-	
+public class VerifyPurchaseOrderSteps {	
 	VerifyPurchaseOrder purchaseOrder = new VerifyPurchaseOrder(DriverFactory.getDriver()); 
 	
 	@Given("user is on place order page")
@@ -23,7 +24,6 @@ public class VerifyPurchaseOrderSteps {
 	@When("user get the title of the page")
 	public void user_get_the_title_of_the_page() {
 		purchaseOrder.getpageTitile();
-
 	}
 
 	@Then("place page title should be {string}")
@@ -64,10 +64,14 @@ public class VerifyPurchaseOrderSteps {
 		purchaseOrder.clickPurchase();
 	}
 
-	@Then("user gets the title of the purchase page")
+	@Then("user gets text of the purchase page")
 	public void user_gets_the_title_of_the_purchase_page() {
-		String idValue = purchaseOrder.verifyHeading();
-		System.out.println(idValue);
+		WebElement idValue = purchaseOrder.verifyText();
+//		System.out.println(idValue);		
+		String[] myTextArray = idValue.getAttribute("innerHTML").split("<br>");
+		String myText02 = myTextArray[1];
+		System.out.println(myText02);
+//		System.out.println(purchaseOrder.display1());
 		
 	}
 
