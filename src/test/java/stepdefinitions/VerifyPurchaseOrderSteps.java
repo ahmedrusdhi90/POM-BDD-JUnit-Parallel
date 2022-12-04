@@ -66,8 +66,7 @@ public class VerifyPurchaseOrderSteps {
 
 	@Then("user gets text of the purchase page")
 	public void user_gets_the_title_of_the_purchase_page() {
-		WebElement idValue = purchaseOrder.verifyText();
-//		System.out.println(idValue);		
+		WebElement idValue = purchaseOrder.verifyText();	
 		String[] myTextArray = idValue.getAttribute("innerHTML").split("<br>");
 		String myText02 = myTextArray[1];
 		System.out.println(myText02);
