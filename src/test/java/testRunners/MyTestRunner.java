@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/features",
+		features = "src/test/resources/parallel",
 		glue = {"stepdefinitions","appHooks"},
 		//monochrome = true,
 		//dryRun = false,

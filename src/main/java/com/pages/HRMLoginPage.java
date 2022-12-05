@@ -24,7 +24,6 @@ public class HRMLoginPage {
 	
 	//3. page actions: feature of the page the form of methods
 	
-	
 	public String getLoginTitile() {
 		return driver.getTitle();
 	}
