@@ -1,4 +1,4 @@
-package stepdefinitions;
+package parallel;
 
 public class newclass {
 

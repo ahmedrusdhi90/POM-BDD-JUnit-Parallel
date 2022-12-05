@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = "src/test/resources/parallel",
-		glue = {"stepdefinitions","appHooks"},
+		glue = {"parallel","appHooks"},
 		//monochrome = true,
 		//dryRun = false,
 		plugin = {"pretty", "html:test-output", "json:target/cucumber-report/cucumber.json"}

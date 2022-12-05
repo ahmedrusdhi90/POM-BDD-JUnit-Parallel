@@ -1,4 +1,4 @@
-package stepdefinitions;
+package parallel;
 
 
 import org.testng.Assert;
