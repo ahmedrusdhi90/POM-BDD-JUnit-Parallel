@@ -1,6 +1,6 @@
 package parallel;
 
-import org.testng.annotations.DataProvider;
+ import org.testng.annotations.DataProvider;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
@@ -11,8 +11,8 @@ import io.cucumber.testng.CucumberOptions;
 				"timeline:test-output-thread/"
 				}, 
 		monochrome = true,
-		glue = { "parallel" },
-		features = { "src/test/resources/parallel" }
+		glue = { "parallel", "appHooks"},
+		features = { "src/test/resources/AppFeatures" }
 )
 
 public class ParallelRun extends AbstractTestNGCucumberTests {
